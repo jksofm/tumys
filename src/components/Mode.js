@@ -30,7 +30,7 @@ function Mode({ data, width = "60%", flex = "33.33%",setCurrentIndex,currentInde
 const Wrapper = styled.div`
   position: fixed;
   width: ${(props) => props.width};
-  height: 6.57%;
+  height: 8.57%;
   left: 50%;
   transform: translateX(-50%);
   bottom: 10%;
@@ -54,6 +54,22 @@ const Wrapper = styled.div`
     text-align: center;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.7);
+    &:hover h3 {
+      /* background: linear-gradient(
+        274.38deg,
+        #ce8f31 0%,
+        #f6e493 50%,
+        #efd45a 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-text-fill-color: transparent; */
+    }
+   &:hover {
+    background: #FFFFFF;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+   }
  
 
     h3 {

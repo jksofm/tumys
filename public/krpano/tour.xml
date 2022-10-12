@@ -9,7 +9,7 @@
 	               maps_google_api_key=""
 	               maps_zoombuttons="false"
 	               maps_loadonfirstuse="true"
-	               gyro="true"
+	               gyro="false"
 	               gyro_keeplookingdirection="false"
 	               webvr="true"
 	               webvr_keeplookingdirection="true"
@@ -68,6 +68,7 @@
 	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
 
 	<action name="startup" autorun="onstart">
 		if(startscene === null, copy(startscene,scene[0].name));

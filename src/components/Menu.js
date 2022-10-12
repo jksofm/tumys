@@ -37,7 +37,7 @@ function Menu() {
             text: 'TOUR 360',
             icon: icontour360,
             iconhover: icontour360hover,
-            link : '/tumys/tour360',
+            link : '/tumys',
             hover: hover1,
             setHover: setHover1
         }
@@ -59,7 +59,7 @@ function Menu() {
             icon: houseicon,
             iconhover:houseiconhover,
             link : '/tumys/house',
-            hover3: hover3,
+            hover: hover3,
             setHover: setHover3
 
     
@@ -105,7 +105,8 @@ function Menu() {
         className="logo"
         onClick={()=>{
             ShowGuide();
-            console.log("logo")
+            console.log("show logo")
+             
         }}
       >
         <img style={{ width: "85%" }} src={logomenu} alt="Logo" />
@@ -126,7 +127,8 @@ function Menu() {
               
                 <span style={{marginLeft: "15px"}} className="menu-text">{item.text}</span>
               </Link>
-              <div className="line"></div>
+              {/* <div className="line"></div>  */}
+              
             </li>
           );
         })}
@@ -143,7 +145,7 @@ const Wrapper = styled.div`
   z-index: 100;
   display: grid;
   grid-template-columns: auto 80.21%;
-  height: 7.4vh;
+  height: 8.2vh;
   align-items: center;
   border-top: 2px solid;
   border-image-slice: 1;
@@ -186,7 +188,7 @@ const Wrapper = styled.div`
           font-family: "UTM Trajan Pro Bold";
           font-style: normal;
           font-weight: 400;
-          font-size: 24px;
+          font-size: 1rem;
           line-height: 35px;
           text-align: center;
           text-transform: uppercase;
@@ -198,7 +200,7 @@ const Wrapper = styled.div`
         height: 100%;
         position: absolute;
         width: 1px;
-        background-image: linear-gradient(#f6e493 100%, #ab7b33 100%);
+        background-image: linear-gradient(180deg, #F6E493 0%, #AB7B33 100%);
         height: 50%;
         right: 0px;
         top: 50%;
@@ -208,8 +210,10 @@ const Wrapper = styled.div`
   }
   .menu-item:hover{
     background: linear-gradient(180deg, #F6E493 0%, #AB7B33 100%);
+   
 
   }
+  
   .menu-item.active {
     background: linear-gradient(180deg, #F6E493 0%, #AB7B33 100%);
   }

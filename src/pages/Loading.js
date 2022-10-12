@@ -6,15 +6,15 @@ import star from "../assets/images/star.png"
 import { useNavigate } from "react-router-dom";
 
 function Loading() {
-  const navigate = useNavigate();
-  useEffect(()=>{
-    const timerId = setTimeout(()=>{
-      navigate("/tumys/tour360")
-    },3000);
-    return ()=>{
-      clearTimeout(timerId);
-    }
-  },[])
+  // const navigate = useNavigate();
+  // useEffect(()=>{
+  //   const timerId = setTimeout(()=>{
+  //     navigate("/tumys/tour360")
+  //   },3000);
+  //   return ()=>{
+  //     clearTimeout(timerId);
+  //   }
+  // },[])
   return (
     <Wrapper>
       <div className="img-box">

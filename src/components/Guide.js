@@ -16,9 +16,12 @@ function Guide() {
     <Wrapper>
       <div className="layer" onClick={() => HideGuide()}></div>
       {/* <img className="guide" onClick={() => handleGuide(false)} src={guideimage} alt="Guide" /> */}
-      <div className="modal" onClick={()=>{
-        console.log("modal");
-      }}>
+      <div
+        className="modal"
+        onClick={() => {
+          console.log("modal");
+        }}
+      >
         <h3>HƯỚNG DẪN THAO TÁC</h3>
         <div className="action">
           <img alt="handicon" className="handicon" src={handicon} />
@@ -28,10 +31,13 @@ function Guide() {
         <p>
           Chạm, di chuyển hoặc click vào từng vị trí tham quan để xem chi tiết
         </p>
-        <button onClick={() => {
+        <button
+          onClick={() => {
             HideGuide();
-            console.log("Guide")
-        }} className="btn">
+            console.log("Guide");
+          }}
+          className="btn"
+        >
           Đã hiểu
         </button>
       </div>
@@ -39,15 +45,15 @@ function Guide() {
   );
 }
 const Wrapper = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-image: transparent !important;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-
+  z-index: 999;
 
   .modal::before {
     content: "";
@@ -60,8 +66,7 @@ const Wrapper = styled.div`
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    z-index: -1;
-
+    z-index: -99;
   }
   .layer {
     height: 100%;
@@ -87,8 +92,8 @@ const Wrapper = styled.div`
 
   .modal {
     position: absolute;
-    width: 30.9%;
-    height: 50.29%;
+    width: 38.9%;
+    cursor: pointer;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -96,7 +101,7 @@ const Wrapper = styled.div`
     background: #0e5a54;
     z-index: 101;
     border-radius: 30px;
-    cursor: pointer;   
+    cursor: pointer;
     text-align: center;
     padding: 50px;
     .action {
@@ -128,7 +133,7 @@ const Wrapper = styled.div`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-   
+
       -webkit-text-fill-color: transparent;
     }
     .or {
@@ -149,27 +154,32 @@ const Wrapper = styled.div`
       color: #ffffff;
     }
     .btn {
-      width: 43%;
+      width: 217px;
+      height: 64px;
+
       background: linear-gradient(274.38deg, #ab7b33 0%, #f6e493 93.23%);
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
       border-radius: 99px;
       padding: 12px;
       z-index: 9999;
-      color: white;
-      font-family: "GothamBold";
+      color: #ffffff;
+      font-family: "SVN-Gotham Bold";
       font-style: normal;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 18px;
       letter-spacing: 0.5px;
       margin-top: 20px;
       align-items: center;
-      cursor:pointer;
+      border: none;
+      cursor: pointer;
       letter-spacing: 3px;
       transition: 0.3s all linear;
-      border-radius: 40px;
+
       &:hover {
-        background: rgb(94, 123, 133);
-        color: rgb(226, 195, 161);
+        background: linear-gradient(274.38deg, #ab7b33 0%, #f6e493 93.23%);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.16);
+        border-radius: 99px;
+        opacity: 0.8;
       }
     }
   }

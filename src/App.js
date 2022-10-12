@@ -11,16 +11,29 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import { useTumysContext } from './context/tumycontext';
 function App() {
+  const [loading,setLoading] = useState(true);
   
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    },1000)
+  },[])
  const {guide,ShowGuide,HideGuide} = useTumysContext();
- 
+  if(loading){
+    return (
+      <Loading />
+    )
+  }
 
     return (
+      <div className="app">
+        
       <Router>
         <Routes>
-              <Route path="/tumys" index element={<Loading />} />
+              {/* <Route path="/tumys" index element={<Loading />} /> */}
           <Route path="/tumys" element={<SharedLayout />}>
-              <Route path="/tumys/tour360" element={<Tour />} />
+              <Route index path="/tumys" element={<Tour />} />
               <Route path="/tumys/utility" element={<Utility />} />
               <Route path= "/tumys/house" element= {<HouseSample />} />
               <Route path= "/tumys/location" element = {<Location />} />
@@ -29,6 +42,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      </div>
     );
   
 }

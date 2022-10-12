@@ -54,7 +54,7 @@
 
 	<!-- path to the scrollarea plugin -->
 	<combobox_scrollareaplugin
-		url.html5="%VIEWER%/plugins/scrollarea.js"
+		url.html5="%HTMLPATH%/krpano/plugins/scrollarea.js"
 		url.flash="%VIEWER%/plugins/scrollarea.swf"
 		/>
 
