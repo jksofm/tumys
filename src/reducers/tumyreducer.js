@@ -7,12 +7,18 @@ import {
     GET_SINGLE_PRODUCT_BEGIN,
     GET_SINGLE_PRODUCT_SUCCESS,
     GET_SINGLE_PRODUCT_ERROR,
-  } from "../actions";
+  } from "../utils/actions";
   
-  const products_reducer = (state, action) => {
+  const tumys_reducer = (state, action) => {
     switch (action.type) {
-      case SIDEBAR_OPEN:
-        return { ...state, isSidebarOpen: true };
+      case "GUIDE_SHOW":
+  
+        return {...state,guide: true };
+      case "GUIDE_HIDE":
+       
+          return {...state,guide: false };
+      case "UPDATE_SCENE":
+          return {...state, currentscene : action.payload.scene}
       case SIDEBAR_CLOSE:
         return { ...state, isSidebarOpen: false };
       case GET_PRODUCTS_BEGIN:
@@ -53,5 +59,5 @@ import {
     }
   };
   
-  export default products_reducer;
+  export default tumys_reducer;
   
