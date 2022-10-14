@@ -5,15 +5,15 @@ import App from './App';
 import './assets/Fonts/00186-UTM-Trajan-Pro-Bold.ttf'
 import './assets/Fonts/SVN-Gotham Bold.ttf'
 import './assets/Fonts/SVN-Gotham Light.ttf'
-import { TumysProvider } from './context/tumycontext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TumysProvider>
+  
 
     <App />
-    </TumysProvider>
+   
   </React.StrictMode>
 );
 

@@ -1,6 +1,6 @@
-﻿<krpano version="1.20.11" title="Virtual Tour">
+﻿<krpano onstart="jscall(reactKrpano.onStart())" version="1.20.11" title="Virtual Tour">
 
-	<include url="skin/vtourskin.xml" />
+	<include url="skin/vtourskin1.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
@@ -69,12 +69,17 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
-
 	<action name="startup" autorun="onstart">
 		if(startscene === null, copy(startscene,scene[0].name));
 		loadscene(get(startscene), null, MERGE);
 		delayedcall(0, skin_hideskin() );
 		</action>
+		<events onnewscene="jscall(calc('reactKrpano.logNewScene(`' + get(xml.scene) + '`)'))" />
+		<action>
+			
+			jscall(calc("reactKrpano.logNewScene(`' + get(xml.scene) + '`)"))
+		
+		  </action>
 	
 	<scene name="scene_DJI_0453_Panorama" title="DJI_0453 Panorama" onstart="" thumburl="panos/DJI_0453_Panorama.tiles/thumb.jpg" lat="10.59625694" lng="107.05518833" heading="0.0">
 		
@@ -156,6 +161,90 @@
 
 		<image>
 			<cube url="panos/GOKU1013_Panorama.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Cayjng_Caybi_Meybp" title="Cảng Cái Mép" onstart="" thumburl="panos/Cayjng_Caybi_Meybp.tiles/thumb.jpg" lat="10.53676222" lng="107.03602083" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Cayjng_Caybi_Meybp.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Cayjng_Caybi_Meybp.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_KCN_My_Xuan" title="KCN My Xuan" onstart="" thumburl="panos/KCN_My_Xuan.tiles/thumb.jpg" lat="10.63890833" lng="107.06198583" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/KCN_My_Xuan.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/KCN_My_Xuan.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_KCN_Phuyb_Myyd_2" title="KCN Phú Mỹ 2" onstart="" thumburl="panos/KCN_Phuyb_Myyd_2.tiles/thumb.jpg" lat="10.56094860" lng="107.04191917" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/KCN_Phuyb_Myyd_2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/KCN_Phuyb_Myyd_2.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_KCN_Phuyb_Myyd_3" title="KCN Phú Mỹ 3" onstart="" thumburl="panos/KCN_Phuyb_Myyd_3.tiles/thumb.jpg" lat="10.52921277" lng="107.06584610" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/KCN_Phuyb_Myyd_3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/KCN_Phuyb_Myyd_3.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_Saycn_golf_Chaycu_qquybybc" title="Sân golf Châu Đức" onstart="" thumburl="panos/Saycn_golf_Chaycu_qquybybc.tiles/thumb.jpg" lat="10.61251555" lng="107.17859000" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Saycn_golf_Chaycu_qquybybc.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Saycn_golf_Chaycu_qquybybc.tiles/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_TTHC" title="TTHC" onstart="" thumburl="panos/TTHC.tiles/thumb.jpg" lat="10.58508472" lng="107.05318972" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/TTHC.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/TTHC.tiles/pano_%s.jpg" />
 		</image>
 
 	</scene>

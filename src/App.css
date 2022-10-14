@@ -84,8 +84,8 @@ body {
   overflow: hidden;
 }
 .app{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: relative;
 }
 ul {
@@ -250,4 +250,19 @@ p {
 }
 .page {
   min-height: calc(100vh - (20vh + 10rem));
+}
+.texterror{
+  background: linear-gradient(
+        274.38deg,
+        #ce8f31 0%,
+        #f6e493 50%,
+        #efd45a 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+}
+.backerror:hover{
+  opacity: 0.8;
+
 }

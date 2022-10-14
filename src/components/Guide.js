@@ -4,14 +4,9 @@ import handicon from "../assets/Icons/handicon.png";
 import mouseicon from "../assets/Icons/mouseicon.png";
 import { useTumysContext } from "../context/tumycontext";
 
-function Guide() {
-  const { HideGuide, ShowGuide } = useTumysContext();
-  useEffect(() => {
-    console.log("guide");
-    setTimeout(() => {
-      ShowGuide();
-    }, 1000);
-  }, []);
+function Guide({ShowGuide,HideGuide}) {
+  
+ 
   return (
     <Wrapper>
       <div className="layer" onClick={() => HideGuide()}></div>
@@ -34,7 +29,7 @@ function Guide() {
         <button
           onClick={() => {
             HideGuide();
-            console.log("Guide");
+           
           }}
           className="btn"
         >
@@ -97,7 +92,7 @@ const Wrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    animation: guideshow 2s linear;
+    animation: guideshow 1s linear;
     background: #0e5a54;
     z-index: 101;
     border-radius: 30px;
@@ -154,7 +149,7 @@ const Wrapper = styled.div`
       color: #ffffff;
     }
     .btn {
-      width: 217px;
+      width: 60%;
       height: 64px;
 
       background: linear-gradient(274.38deg, #ab7b33 0%, #f6e493 93.23%);
@@ -193,6 +188,44 @@ const Wrapper = styled.div`
       visibility: visible;
     }
   }
+/* Tablet */
+  @media screen and (max-width: 1024px) {
+     .modal {
+      width: 53%!important;
+      h3{
+       font-size : 26px;
+      }
+      p{
+        font-size: 18px;
+      }
+      .btn{
+        
+      }
+     }
+}
+/* Phone */
+@media screen and (max-width: 768px) {
+     .modal {
+      width: 94%!important;
+      top: 45%;
+      /* height: 30%;
+      overflow: hidden; */
+      h3{
+       font-size : 22px;
+       line-height: 30px;
+       margin-bottom: 20px!important;
+
+      }
+      p{
+        font-size: 16px;
+      }
+      .btn{
+        font-size: 12px;
+        height: 50px;
+      }
+     }
+}
+
 `;
 
 export default Guide;

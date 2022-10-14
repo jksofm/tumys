@@ -2,21 +2,16 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Guide from "../components/Guide";
 import Mode from "../components/Mode";
-import { useTumysContext } from "../context/tumycontext";
+
 import useKrpano from "react-krpano-hooks";
 import Image360 from "../components/Image360";
-import Loading from "./Loading";
 
-function Tour() {
-  const {
-    guide,
-    ShowGuide,
-    updateCurrentScene,
-    currentscene,
-   
-  } = useTumysContext();
+
+function Tour({loadnewscene,setCurrentscene,currentscene,ShowGuide,HideGuide,guide}) {
+  
   // const [isLoading,setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(1);
+ 
  
 
   const {
@@ -30,18 +25,28 @@ function Tour() {
       },
     },
   });
+  useEffect(()=>{},[
+    callKrpano(`loadscene(${currentscene}, null, MERGE);`),
+    // setKrpano(`layer[${currentscene}]`,0)
 
-  useEffect(() => {
-    callKrpano(`loadscene(${currentscene},null,MERGE)`);
-    updateCurrentScene(currentscene)
-  }, [currentscene]);
+ ],[])
+ useEffect(()=>{
+    setCurrentscene("scene_DJI_0453_Panorama")
+ },[containerRef])
 
-  useEffect(() => {
-    // updateCurrentScene("scene_DJI_0453_Panorama");
-    callKrpano(`loadscene(scene_DJI_0453_Panorama,null,MERGE)`);
 
-    console.log("test home");
-  }, []);
+//   useEffect(()=>{
+//     loadnewscene("scene_DJI_0453_Panorama")
+//     console.log('river')
+// },[])
+
+
+
+  
+
+  
+
+
 
   const data = [
     {
@@ -65,17 +70,20 @@ function Tour() {
       scene: "scene_GOKU1013_Panorama",
     },
   ];
-  useEffect(() => {
-    ShowGuide();
-  }, []);
+
 
   return (
     <Wrapper>
-      <Image360 containerRef={containerRef} />
+      {guide && <Guide ShowGuide={ShowGuide} HideGuide={HideGuide} /> }
+      {/* <Image360 currentscene={currentscene} setCurrentscene={setCurrentscene} containerRef={containerRef}/> */}
+     <div ref={containerRef} style={{ width: '100%', height: '100%' }} />  
+      
+      
 
       <Mode
         data={data}
-        updateCurrentScene={updateCurrentScene}
+        setCurrentscene={setCurrentscene} 
+        loadnewscene={loadnewscene}
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
         width="40%"

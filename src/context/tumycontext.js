@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import reducer from "../reducers/tumyreducer";
 
 import {} from "../utils/actions";
@@ -14,37 +14,34 @@ import useKrpano from "react-krpano-hooks";
 
 const initialState = {
   guide: false,
-  currentscene: null,
+  // currentscene: "scene_DJI_0453_Panorama",
 };
 
 const TumysContext = React.createContext();
 
 export const TumysProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const {
-    krpanoState: { scriptLoaded, isEmbedded, isLoaded, error },
-    containerRef,
-    callKrpano,
-  } = useKrpano({
-    globalFunctions: {
-      logNewScene: (scene) => {
-        console.log("New scene: ", scene);
-      },
-    },
-  });
+  
 
-  // const openSidebar = ()=>{
-  //   dispatch({type:SIDEBAR_OPEN})
-  // }
-  // const closeSidebar = ()=>{
-  //   dispatch({type:SIDEBAR_CLOSE})
-  // }
+  // const { 
+  //   krpanoState: { scriptLoaded, isEmbedded, isLoaded, error },
+  //   containerRef,
+  //   callKrpano,
+  // } = useKrpano({
+  //   globalFunctions: {
+  //     logNewScene: (scene) => {
+  //       console.log("New scene: ", scene);
+  //     },
+  //   },
+  // });
+
+
   const ShowGuide = () => {
-    console.log("hello");
+  
     dispatch({ type: "GUIDE_SHOW" });
   };
   const HideGuide = () => {
-    console.log("hello");
+    
 
     dispatch({ type: "GUIDE_HIDE" });
   };
@@ -68,12 +65,9 @@ export const TumysProvider = ({ children }) => {
         ...state,
         HideGuide,
         ShowGuide,
-        updateCurrentScene,
-        containerRef,
-        scriptLoaded,
-        isEmbedded,
-        isLoaded,
-        error,
+        // updateCurrentScene,
+        
+      
 
         // closeSidebar,
         // openSidebar,

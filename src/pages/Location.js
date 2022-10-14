@@ -2,17 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import Guide from '../components/Guide'
 import Image360 from '../components/Image360'
-import { useTumysContext } from "../context/tumycontext";
+import ImageLocation from "../components/ImageLocation"
 
 
-function Location() {
-  const { guide, ShowGuide, updateCurrentScene, currentscene } =
-  useTumysContext();
+function Location({guide,ShowGuide,HideGuide}) {
+ 
   return (
     <Wrapper>
-
+     
+     {/* <ImageLocation  /> */}
+   
+        
      <Image360 normalimage />
     {/* {guide && <Guide /> } */}
+    {guide && <Guide ShowGuide={ShowGuide} HideGuide={HideGuide} /> }
+
 
 
     </Wrapper>

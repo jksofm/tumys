@@ -4,22 +4,22 @@ import Guide from '../components/Guide'
 
 import Logo from '../components/Logo'
 import Menu from '../components/Menu'
-import { useTumysContext } from '../context/tumycontext'
 
 
 
-function SharedLayout() {
-  const {guide,ShowGuide,HideGuide} = useTumysContext();
+
+function SharedLayout({guide,ShowGuide,HideGuide}) {
+ 
 
   return (
     <>
-    {guide && <Guide /> }
+    
     
     
 
-    <Logo />
+    <Logo ShowGuide={ShowGuide} />
     <Outlet />
-    <Menu />
+    <Menu ShowGuide={ShowGuide} HideGuide={HideGuide} guide={guide} />
     </>
   )
 }
